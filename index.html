@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Custom CSS styles for the calculator */
+    .calculator {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 360px;
+      margin: 0 auto;
+    }
+
+    .calculator-input {
+      background-color: #fff;
+      border: none;
+      width: 100%;
+      height: 60px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .button-row .btn {
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+    }
+
+    .btn-white {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .btn-blue {
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <input type="text" id="result" class="calculator-input" readonly>
+      <div class="button-row">
+        <button class="btn btn-secondary">Deg</button>
+        <button class="btn btn-secondary">x!</button>
+        <button class="btn btn-secondary">(</button>
+        <button class="btn btn-secondary">)</button>
+        <button class="btn btn-secondary">%</button>
+        <button class="btn btn-secondary" onclick="clearResult()">AC</button>
+      </div>
+      <div class="button-row">
+        <button class="btn btn-secondary">sin</button>
+        <button class="btn btn-secondary">ln</button>
+        <button class="btn btn-white" onclick="appendChar('7')">7</button>
+        <button class="btn btn-white" onclick="appendChar('8')">8</button>
+        <button class="btn btn-white" onclick="appendChar('9')">9</button>
+        <button class="btn btn-secondary" onclick="appendChar('/')">/</button>
+      </div>
+      <div class="button-row">
+        <button class="btn btn-secondary">cos</button>
+        <button class="btn btn-secondary">log</button>
+        <button class="btn btn-white" onclick="appendChar('4')">4</button>
+        <button class="btn btn-white" onclick="appendChar('5')">5</button>
+        <button class="btn btn-white" onclick="appendChar('6')">6</button>
+        <button class="btn btn-secondary" onclick="appendChar('*')">x</button>
+      </div>
+      <div class="button-row">
+        <button class="btn btn-secondary">tan</button>
+        <button class="btn btn-secondary">√</button>
+        <button class="btn btn-white" onclick="appendChar('1')">1</button>
+        <button class="btn btn-white" onclick="appendChar('2')">2</button>
+        <button class="btn btn-white" onclick="appendChar('3')">3</button>
+        <button class="btn btn-secondary" onclick="appendChar('-')">-</button>
+      </div>
+      <div class="button-row">
+        <button class="btn btn-secondary">EXP</button>
+        <button class="btn btn-secondary">x^y</button>
+        <button class="btn btn-white" onclick="appendChar('0')">0</button>
+        <button class="btn btn-white" onclick="appendChar('.')">.</button>
+        <button class="btn btn-blue" onclick="calculate()">=</button>
+        <button class="btn btn-secondary" onclick="appendChar('+')">+</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // JavaScript code for calculator functionality
+    function appendChar(char) {
+      // Append the character to the result input
+      document.getElementById('result').value += char;
+    }
+
+    function clearResult() {
+      // Clear the result input
+      document.getElementById('result').value = '';
+    }
+
+    function calculate() {
+      // Evaluate the expression
+      var result = document.getElementById('result').value;
+      var answer = eval(result);
+      document.getElementById('result').value = answer;
+    }
+  </script>
+</body>
+</html>
