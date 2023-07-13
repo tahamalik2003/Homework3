@@ -53,40 +53,40 @@
     <div class="calculator">
       <input type="text" id="result" class="calculator-input" readonly>
       <div class="button-row">
-        <button class="btn btn-secondary">Deg</button>
-        <button class="btn btn-secondary">x!</button>
+        <button class="btn btn-secondary" disabled>Deg</button>
+        <button class="btn btn-secondary" disabled>x!</button>
         <button class="btn btn-secondary">(</button>
         <button class="btn btn-secondary">)</button>
         <button class="btn btn-secondary">%</button>
         <button class="btn btn-secondary" onclick="clearResult()">AC</button>
       </div>
       <div class="button-row">
-        <button class="btn btn-secondary">sin</button>
-        <button class="btn btn-secondary">ln</button>
+        <button class="btn btn-secondary" onclick="appendChar('sin(')">sin</button>
+        <button class="btn btn-secondary" onclick="appendChar('ln(')">ln</button>
         <button class="btn btn-white" onclick="appendChar('7')">7</button>
         <button class="btn btn-white" onclick="appendChar('8')">8</button>
         <button class="btn btn-white" onclick="appendChar('9')">9</button>
         <button class="btn btn-secondary" onclick="appendChar('/')">/</button>
       </div>
       <div class="button-row">
-        <button class="btn btn-secondary">cos</button>
-        <button class="btn btn-secondary">log</button>
+        <button class="btn btn-secondary" onclick="appendChar('cos(')">cos</button>
+        <button class="btn btn-secondary" onclick="appendChar('log(')">log</button>
         <button class="btn btn-white" onclick="appendChar('4')">4</button>
         <button class="btn btn-white" onclick="appendChar('5')">5</button>
         <button class="btn btn-white" onclick="appendChar('6')">6</button>
         <button class="btn btn-secondary" onclick="appendChar('*')">x</button>
       </div>
       <div class="button-row">
-        <button class="btn btn-secondary">tan</button>
-        <button class="btn btn-secondary">√</button>
+        <button class="btn btn-secondary" onclick="appendChar('tan(')">tan</button>
+        <button class="btn btn-secondary" onclick="appendChar('sqrt(')">&#8730;</button>
         <button class="btn btn-white" onclick="appendChar('1')">1</button>
         <button class="btn btn-white" onclick="appendChar('2')">2</button>
         <button class="btn btn-white" onclick="appendChar('3')">3</button>
         <button class="btn btn-secondary" onclick="appendChar('-')">-</button>
       </div>
       <div class="button-row">
-        <button class="btn btn-secondary">EXP</button>
-        <button class="btn btn-secondary">x^y</button>
+        <button class="btn btn-secondary" disabled>EXP</button>
+        <button class="btn btn-secondary" onclick="appendChar('^')">x^y</button>
         <button class="btn btn-white" onclick="appendChar('0')">0</button>
         <button class="btn btn-white" onclick="appendChar('.')">.</button>
         <button class="btn btn-blue" onclick="calculate()">=</button>
